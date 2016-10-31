@@ -1,7 +1,0 @@
-<ul [ngClass]="['navigation-buttons']">
-	<li *ngFor="let tab of tabs"
-	    [class.active]="tab === currentTab"
-	    (click)="onClick(tab)">
-		<i [ngClass]="[tab.iconClass]"></i>
-	</li>
-</ul>

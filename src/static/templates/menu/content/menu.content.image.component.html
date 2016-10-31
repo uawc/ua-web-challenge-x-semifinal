@@ -1,0 +1,17 @@
+<div [ngClass]="['title']">Choose an image:</div>
+
+<ul #imageList class="image-items">
+	<li *ngFor="let image of images" class="image-item"
+	    (click)="onClick(image)"
+		[ngStyle]="{'background-image': 'url(' + image.url + ')'}">
+	</li>
+</ul>
+
+<div [ngClass]="['uk-form-file']">
+	<button [ngClass]="['uk-button', 'uk-button-large', 'uk-button-primary']">Load image</button>
+	<input type="file" (change)="loadImage($event)">
+</div>
+
+<div *ngIf="layersService.layers.length === 10" [ngClass]="['overlay']">
+	<p>Sorry, too many layers</p>
+</div>

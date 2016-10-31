@@ -1,0 +1,34 @@
+<div [ngClass]="['title']">Painting Mode:</div>
+
+<h3>Pick a color:</h3>
+
+<ul [ngClass]="['paint-colors']">
+	<li *ngFor="let color of paintService.paintSettings.colors"
+	    [ngClass]="['paint-color']"
+	    [class.active]="color === paintService.paintSettings.activeColor"
+	    (click)="onColorClick(color)"
+	    [ngStyle]="{'background': color }">
+	</li>
+</ul>
+
+<h3>Pick a brush size:</h3>
+
+<ul [ngClass]="['brush-sizes']">
+	<li *ngFor="let size of paintService.paintSettings.sizes"
+	    [ngClass]="['brush-size']"
+	    [class.active]="size === paintService.paintSettings.activeSize"
+	    (click)="onBrashSizeClick(size)">
+		<i [ngStyle]="{
+		'width': size + 'px',
+		'height': size + 'px',
+		'margin-top': -size / 2 + 'px',
+		'margin-left': -size / 2 + 'px'}"></i>
+	</li>
+</ul>
+
+<button [ngClass]="['uk-button', 'uk-button-large', 'uk-button-danger']" (click)="clearPaint($event)">Clear Paint</button>
+<button [ngClass]="['uk-button', 'uk-button-large', 'uk-button-success']" (click)="savePaint($event)">Save Paint</button>
+
+<div *ngIf="layersService.layers.length === 10" [ngClass]="['overlay']">
+	<p>Sorry, too many layers</p>
+</div>

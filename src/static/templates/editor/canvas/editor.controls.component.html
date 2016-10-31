@@ -1,0 +1,27 @@
+<div [ngClass]="['control-border']"
+     [ngStyle]="{
+        top: controlsService.controls.y + 'px',
+        left: controlsService.controls.x + 'px',
+        width: controlsService.controls.layer.width + 'px',
+        height: controlsService.controls.layer.height + 'px',
+        transform: 'rotate(' + controlsService.controls.angle + 'deg)'}">
+
+	<div [ngClass]="['control-inner']">
+		<div [ngClass]="['control-drag']"></div>
+
+		<div *ngFor="let scaleControl of scaleControls"
+		     (mousedown)="onScaleControlDown($event, scaleControl)"
+		     [ngClass]="['scale-control', scaleControl.type]">
+		</div>
+	</div>
+
+</div>
+
+<ul [ngClass]="['controls-buttons']"
+    [ngStyle]="{'top': controlsService.controls.y - 40 + 'px', 'left': controlsService.controls.x + 'px'}">
+	<li *ngFor="let button of buttons"
+	    (mousedown)="onControlButtonClick($event, button)">
+		<i [ngClass]="[button.iconClass]"></i>
+		<i [ngClass]="['tooltip']">{{button.title}}</i>
+	</li>
+</ul>

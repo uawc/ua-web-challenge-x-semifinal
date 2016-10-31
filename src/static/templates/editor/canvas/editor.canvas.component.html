@@ -1,0 +1,28 @@
+<div [ngClass]="['background-wrapper']">
+	<img #backgroundImage src="{{productService.currentProduct.mainImageUrl}}" alt="productImage" />
+	<div #limitFrame
+	     [ngClass]="['limitFrame']"
+	     [ngStyle]="{
+     'top': layersService.layerLimits.y + 'px',
+     'left': layersService.layerLimits.x + 'px',
+     'width': layersService.layerLimits.width - 2 + 'px',
+     'height': layersService.layerLimits.height - 2 + 'px'}">
+	</div>
+</div>
+
+<canvas #canvasLayers
+        *ngFor="let layer of layersService.layers"
+        width="{{layer.layerLimits.width}}"
+        height="{{layer.layerLimits.height}}"
+        [ngStyle]="{'top': layer.layerLimits.y + 'px', 'left': layer.layerLimits.x + 'px'}">
+</canvas>
+
+<canvas #canvasDraw
+        *ngIf="paintService.paintSettings.isActive"
+        width="{{layersService.layerLimits.width}}"
+        height="{{layersService.layerLimits.height}}"
+        (mousedown)="onDrawLayerClick($event)"
+        [ngStyle]="{'top': layersService.layerLimits.y + 'px', 'left': layersService.layerLimits.x + 'px'}">
+</canvas>
+
+<editor-canvas-controls *ngIf="controlsService.controls"></editor-canvas-controls>

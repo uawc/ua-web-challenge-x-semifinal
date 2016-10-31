@@ -21,4 +21,4 @@ That's all. Check [http://localhost:8080](http://localhost:8080) in your browser
 
 ###Where can you see It?
 
-It's quite simple, just go to GitHub page right *[here](https://graphoper.github.io/ua-web-challenge-x-semifinal/)*
+It's quite simple, just go to GitHub page right *[here](https://graphlich.github.io/ua-web-challenge-x-semifinal/)*

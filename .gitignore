@@ -3,3 +3,4 @@ app
 .idea
 typings
 *.iml
+.DS_Store

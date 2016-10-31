@@ -2,7 +2,7 @@
 exports.PRODUCTS = [
     {
         name: 't-shirt',
-        previewImageUrl: '/img/t-shirt-small.png',
+        previewImageUrl: 'img/t-shirt-small.png',
         mainImageUrl: 'img/t-shirt-large.png',
         layerLimits: {
             x: 160,
@@ -13,7 +13,7 @@ exports.PRODUCTS = [
     },
     {
         name: 't-shirt-white',
-        previewImageUrl: '/img/t-shirt-small-white.png',
+        previewImageUrl: 'img/t-shirt-small-white.png',
         mainImageUrl: 'img/t-shirt-large-white.png',
         layerLimits: {
             x: 160,
@@ -24,7 +24,7 @@ exports.PRODUCTS = [
     },
     {
         name: 'cup',
-        previewImageUrl: '/img/cup-small.png',
+        previewImageUrl: 'img/cup-small.png',
         mainImageUrl: 'img/cup-large.png',
         layerLimits: {
             x: 70,

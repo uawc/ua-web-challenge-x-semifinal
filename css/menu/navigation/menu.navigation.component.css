@@ -1,0 +1,32 @@
+:host {
+  position: absolute;
+  width: 35px;
+  right: 250px;
+  top: 5px;
+  z-index: 100;
+}
+ul {
+  background-color: #d2d2d2;
+  border-radius: 4px 0 0 4px;
+  border: 1px solid #c8c8c8;
+  border-left: 0;
+}
+ul li {
+  padding: 10px;
+  margin-left: 1px;
+  text-align: center;
+  cursor: pointer;
+  transition: .1s all;
+}
+ul li:first-child {
+  border-top-left-radius: 4px;
+}
+ul li:last-child {
+  border-bottom-left-radius: 4px;
+}
+ul li:hover {
+  background: #fff;
+}
+ul li.active {
+  background: #fff;
+}
